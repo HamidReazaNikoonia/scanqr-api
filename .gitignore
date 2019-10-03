@@ -1,6 +1,10 @@
 # Use yarn.lock instead
 package-lock.json
 
+uploads
+
+./uploads
+
 # Environment variables
 .env
 
