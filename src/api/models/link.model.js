@@ -1,17 +1,18 @@
 const mongoose = require('mongoose');
 
 const LinkSchema = new mongoose.Schema({
-    title: {
-        type: String,
-        required: true
-    },
-    file_path: {
-        type: String,
-        required: true
-    },
-    file_name: String,
-    describtion: String,
-    image: String
-})
+  title: {
+    type: String,
+    required: true,
+  },
+  qrcode_img: String,
+  file_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+  },
+  description: String,
+  image: String,
 
-module.exports = mongoose.model('Link', LinkSchema );
+});
+
+module.exports = mongoose.model('Link', LinkSchema);
