@@ -11,7 +11,8 @@ const File = require('./../models/file.model');
 
 exports.get = async (req, res, next) => {
   try {
-    const Links = await Link.find();
+    const Links = await Link.find()
+      .populate('file_id');
     res.json({
       status: 200,
       links: Links,

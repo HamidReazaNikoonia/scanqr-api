@@ -6,8 +6,14 @@ const LinkSchema = new mongoose.Schema({
     required: true,
   },
   qrcode_img: String,
+  user_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: false,
+  },
   file_id: {
     type: mongoose.Schema.Types.ObjectId,
+    ref: 'File',
     required: true,
   },
   description: String,

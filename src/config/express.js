@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const compress = require('compression');
@@ -19,6 +20,9 @@ const app = express();
 
 // request logging. dev: console | production: file
 app.use(morgan(logs));
+
+// get static uploaded file in /static route
+app.use('/static', express.static(path.join(process.env.PWD, 'uploads')));
 
 // parse body params and attache them to req.body
 app.use(bodyParser.json());
