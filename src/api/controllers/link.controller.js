@@ -25,9 +25,11 @@ exports.get = async (req, res, next) => {
 
 exports.create = async (req, res, next) => {
   try {
-    const querystr = `${req.body.title}/username`;
-    const qrcode_img = await qrcode.toDataURL(`http://192.168.1.4:8080/links/${querystr}`);
+    const id__ = 's';
+    // const querystr = `${req.body.title}/username`;
+    const qrcode_img = await qrcode.toDataURL(`http://192.168.1.4:8080/links/${id__}`);
     req.body.qrcode_img = qrcode_img;
+    req.body._id = id__;
     const LinkModel = new Link(req.body);
     const savedLink = await LinkModel.save();
     res.json({

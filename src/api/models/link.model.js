@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const LinkSchema = new mongoose.Schema({
+  _id: String,
   title: {
     type: String,
     required: true,
